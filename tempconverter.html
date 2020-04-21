@@ -3,82 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: poppins;
-            text-align: center;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: #f5f5dc;
-            padding: 40px;
-            border: solid 1px #6495ed;
-            border-radius: 10px;
-        }
-
-        .tempValue {
-            margin-top: 20px;
-            width: 100%;
-            padding: 5px 15px;
-            border-radius: 30px;
-            border: solid 1px #6495ed;
-        }
-
-        button {
-            border: none;
-            color: #ffffff;
-            background-color: #131446;
-            padding: 12px 36px;
-            border-radius: 30px;
-            font-size: 20px;
-        }
-
-        button:hover {
-            border: none;
-            color: #131446;
-            background-color: #6495ed;
-            padding: 13px 38px;
-            border-radius: 30px;
-            font-size: 20px;
-        }
-
-        .errorMsg {
-            color: #ff0000;
-            font-size: 8px;
-        }
-
-        select {
-            border-color: #13144662;
-            background-color: #131446;
-            width: 120px;
-            height: 30px;
-            font-size: 14px;
-            color: #fff;
-            text-transform: uppercase;
-            padding-left: 10px;
-        }
-
-        @media screen and (max-width: 320px) {
-            select {
-            border-color: #13144662;
-            background-color: #131446;
-            width: 96px;
-            height: 20px;
-            font-size: 14px;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -98,51 +23,6 @@
         <p><span class="celsiusValue">0</span> celsius is equal to <span class="fahrenheitValue">32</span> Fahrenheit.</p>
         <div><button onclick="tempConverter()">CONVERT</button></div>
     </div>
-    <script>
-
-        function tempConverter() {
-
-            let error = false;
-
-            let celsius = document.querySelector(".celsius1");
-            let celsius2 = document.querySelector(".celsius2");
-            let fahrenheit = document.querySelector(".fahrenheit1");
-            let fahrenheit2 = document.querySelector(".fahrenheit2");
-            
-            let temperature = document.querySelector(".tempValue");
-            let fahrenheitValue = document.querySelector(".fahrenheitValue");
-            let celsiusValue = document.querySelector(".celsiusValue");
-            let errorMsg = document.querySelector(".errorMsg");
-
-            if (celsius.selected && fahrenheit2.selected) {
-                fahrenheitResult = ((temperature.value * 1.8) + 32);
-                fahrenheitResult = fahrenheitResult.toFixed(2);
-                fahrenheitValue.innerHTML = fahrenheitResult;
-                celsiusValue.innerHTML = temperature.value;
-            }
-
-            if (fahrenheit.selected && celsius2.selected) {
-                celsiusResult = ((temperature.value - 32) / 1.8);
-                celsiusResult = celsiusResult.toFixed(2);
-                celsiusValue.innerHTML = celsiusResult;
-                fahrenheitValue.innerHTML = temperature.value;
-            }
-
-            if (fahrenheit.selected && fahrenheit2.selected) {
-                error = true;
-                errorMsg.innerHTML = "You cannot convert from Fahrenheit to Fahrenheit! Change one to Celsius."
-            }
-
-            if (celsius.selected && celsius2.selected) {
-                error = true;
-                errorMsg.innerHTML = "You cannot convert from Celsius to Celsius! Change one to Fahrenheit."
-            }
-
-            if (error === false) {
-                errorMsg.innerHTML = "";
-            }
-        }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
