@@ -1,2 +1,2 @@
-# JavaScripr-Temperature-Converter
+# JavaScript-Temperature-Converter
 A simple Celsius to Fahrenheit converter.
